@@ -156,7 +156,7 @@ export default {
 
       // Check which files need to be uploaded
       this.loading = true;
-      fetch("https://diff.pics/check_images", {
+      fetch("https://diff.theiahd.nl/check_images", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -177,7 +177,7 @@ export default {
               data.append("content-type", f.type);
               data.append("file", f);
 
-              return fetch("https://diff.pics/upload", {
+              return fetch("https://diff.theiahd.nl/upload", {
                 method: "POST",
                 body: data
               }).then(response => {
@@ -198,7 +198,7 @@ export default {
             }
             data.images.push(row);
           }
-          return fetch("https://diff.pics/create_comparison", {
+          return fetch("https://diff.theiahd.nl/create_comparison", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
